@@ -1,0 +1,12 @@
+{
+  "name": "jquery-movingservice",
+  "version": "0.0.2",
+  "main": "jquery.movingservice.js",
+  "dependencies": {
+    "jquery": null
+  },
+  "ignore": [
+    "package.json",
+    "README.md"
+  ]
+}
