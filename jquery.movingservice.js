@@ -1,5 +1,6 @@
 define(['jquery', 'jquery-movingformservice'],function ($, movingFormService) {
-    $.fn.getLeadForm = function (input_button) { //TODO: I SHOULD NOT BE A PLUGIN -BNS
+    // sid may be undefined or null (will default to AG's SID value server-side)
+    $.fn.getLeadForm = function (input_button, sid) { //TODO: I SHOULD NOT BE A PLUGIN -BNS
         try {
             var lead_form = $(this);
             $(this).movingService({
@@ -46,8 +47,8 @@ define(['jquery', 'jquery-movingformservice'],function ($, movingFormService) {
                 form_params:{
                     MovingTo_state:$(this).attr('data-state'),
                     MovingTo_city:$(this).attr('data-city'),
-                    MovingTo_zip:$(this).attr('data-zip')
-                    // required_fields: ['moving_lead_FirstName', 'moving_lead_LastName', 'moving_lead_Email', 'moving_lead_MovingFrom_state', 'MovingFrom_city', 'MovingFrom_zip', 'MovingTo_city', 'MovingTo_state', 'TypeOfMove', 'moving_lead_MovingDate']
+                    MovingTo_zip:$(this).attr('data-zip'),
+                    Sid:sid
                 },
                 lead_saved:function () {
                     lead_form.load('/v1/moving_lead/thankyou', '', function () {
