@@ -2,25 +2,24 @@
   "name": "jquery-moving-service",
   "description": "client for https://github.com/primedia/jquery-movingservice/",
   "main": "dist/jquery-moving-service.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "requirejs": "*",
     "jquery": "1.8.3"
   },
   "ignore": [
-      ".gitignore",
-      ".jshintrc",
-      "Gemfile",
-      "Gemfile.lock",
-      "package.json",
-      "Rakefile",
-      "README.md",
-      "lib",
-      "spec",
-      "src",
-      "vendor",
-      "guplfile.coffee",
-      "examples"
-    ]
+    ".gitignore",
+    ".jshintrc",
+    "Gemfile",
+    "Gemfile.lock",
+    "package.json",
+    "Rakefile",
+    "README.md",
+    "lib",
+    "spec",
+    "src",
+    "vendor",
+    "guplfile.coffee",
+    "examples"
+  ]
 }
-
