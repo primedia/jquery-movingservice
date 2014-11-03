@@ -4,7 +4,6 @@ define [
   "moving-form",
   "jquery-maskedinput"
 ], ($, ui, movingForm, mask) ->
-movingFormbower.
   # sid may be undefined or null (will default to AG's SID value server-side)
   $.fn.getLeadForm = (input_button, options={}) -> #TODO: I SHOULD NOT BE A PLUGIN -BNS
     try

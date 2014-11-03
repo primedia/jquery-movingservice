@@ -148,7 +148,7 @@
 }).call(this);
 
 (function() {
-  define('jquery-moving-service',["jquery", "jquery-ui", "moving-form"], function($, ui, movingForm) {
+  define('jquery-moving-service',["jquery", "jquery-ui", "moving-form", "jquery-maskedinput"], function($, ui, movingForm, mask) {
     return $.fn.getLeadForm = function(input_button, options) {
       var err, lead_form, moving_service_error;
       if (options == null) {
