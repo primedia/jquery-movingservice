@@ -20,6 +20,9 @@
     "src",
     "vendor",
     "guplfile.coffee",
-    "examples"
+    "Gruntfile.js",
+    "examples",
+    "require.build.js",
+    "dist/shared"
   ]
 }
