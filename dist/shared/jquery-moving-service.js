@@ -1,7 +1,10 @@
 (function() {
-  define(["jquery", "moving-form"], function($, movingForm) {
+  define(["jquery", "jquery-ui", "moving-form"], function($, ui, movingForm) {
     return $.fn.getLeadForm = function(input_button, options) {
       var err, lead_form, moving_service_error;
+      if (options == null) {
+        options = {};
+      }
       try {
         lead_form = $(this);
         return $(this).movingService({

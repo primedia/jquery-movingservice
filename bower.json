@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "dependencies": {
     "requirejs": "*",
-    "jquery": "1.8.3"
+    "jquery": "1.8.3",
+    "jquery-ui": "git@github.com:primedia/jquery-ui.git#1.8.22"
   },
   "ignore": [
     ".gitignore",

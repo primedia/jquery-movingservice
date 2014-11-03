@@ -1,10 +1,11 @@
 define [
-  "jquery"
+  "jquery",
+  "jquery-ui",
   "moving-form"
-], ($, movingForm) ->
+], ($, ui, movingForm) ->
 
   # sid may be undefined or null (will default to AG's SID value server-side)
-  $.fn.getLeadForm = (input_button, options) -> #TODO: I SHOULD NOT BE A PLUGIN -BNS
+  $.fn.getLeadForm = (input_button, options={}) -> #TODO: I SHOULD NOT BE A PLUGIN -BNS
     try
       lead_form = $(this)
       $(this).movingService
