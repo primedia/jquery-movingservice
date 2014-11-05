@@ -1,0 +1,7 @@
+.DS_Store
+.rvmrc
+vendor/ruby
+vendor/bower
+.bundle
+node_modules
+spec/javascripts/shared

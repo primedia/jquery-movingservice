@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>bower-rjs jquery-moving-service.js</title>
+    <script src="../vendor/bower/requirejs/require.js"></script>
+    <script src="../dist/require.config.js"></script>
+    <script>
+      require(["jquery-moving-service"], function(module){
+        window.module = module;
+      });
+     </script>
+</head>
+<body>
+    <section>
+        <h1> jquery-moving-service.js module</h1>
+        <code id="output"> </code>
+    </section>
+    <script>
+        elem = document.getElementById('output');
+        elem.innerHtml = window.module;
+    </script>
+</body>
+</html>

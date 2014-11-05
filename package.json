@@ -1,25 +1,22 @@
 {
-  "name": "jquery-movingservice",
-  "version": "0.0.2",
-  "description": "jquery-movingservice plugin",
-  "homepage": "https://github.com/primedia/preserves",
-  "jam": {
-    "dependencies": {
-      "jquery": null
-    },
-    "main": "jquery.movingservice.js",
-    "include": [
-      "jquery.movingservice.js"
-    ]
+  "name": "jquery-moving-service",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "grunt": "^0.4.5",
+    "grunt-bower-requirejs": "^1.1.0",
+    "gulp": "^3.8.6",
+    "gulp-release-tasks": "0.0.3",
+    "gulp-coffee": "^2.1.1",
+    "gulp-watch": "^1.0.7",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "^2.2.20",
+    "requirejs": "^2.1.14"
   },
-  "author": {
-    "name": "Primedia"
-  },
-  "repositories": [
-    {
-        "type": "git",
-        "url": "https://github.com/primedia/preserves.git"
-    }
-  ],
-  "github": "https://github.com/primedia/preserves.git"
+  "scripts": {
+    "start": "bundle; npm install; bower install; grunt bower; ./node_modules/gulp/bin/gulp.js;",
+    "test": "bundle exec rake jasmine;"
+  }
 }
