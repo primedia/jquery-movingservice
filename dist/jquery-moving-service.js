@@ -80,6 +80,7 @@
           $(".moving_form", form_div).submit(submitLead);
           setup_bindings();
           form_div.show();
+
           $(document).trigger('uiMovingFormShown');
         });
       };
@@ -195,6 +196,7 @@
             }
             $(".form_button_box input").val("Get Moving Quotes!");
             $(".form_button_box input").addClass("button");
+            $(document).trigger('uiMovingFormUpdated');
           },
           form_params: {
             MovingTo_state: $(this).attr("data-state"),
