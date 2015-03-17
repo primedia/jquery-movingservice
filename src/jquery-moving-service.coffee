@@ -43,7 +43,6 @@ define [
             $("#moving_lead_EvePhone").unmask().mask "(999) 999-9999"
           $(".form_button_box input").val "Get Moving Quotes!"
           $(".form_button_box input").addClass "button"
-          $(document).trigger 'uiMovingFormUpdated'
           return
 
         form_params:
