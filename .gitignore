@@ -5,3 +5,4 @@ vendor/bower
 .bundle
 node_modules
 spec/javascripts/shared
+vendor/bower
