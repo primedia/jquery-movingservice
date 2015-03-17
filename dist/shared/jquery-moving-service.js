@@ -45,6 +45,7 @@
             }
             $(".form_button_box input").val("Get Moving Quotes!");
             $(".form_button_box input").addClass("button");
+            $(document).trigger('uiMovingFormUpdated');
           },
           form_params: {
             MovingTo_state: $(this).attr("data-state"),

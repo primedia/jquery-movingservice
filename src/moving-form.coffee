@@ -75,6 +75,7 @@ define ["jquery"], ($) ->
         $(".moving_form", form_div).submit submitLead
         setup_bindings()
         form_div.show()
+        $(document).trigger 'uiMovingFormShown'
         return
 
       return
