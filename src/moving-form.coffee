@@ -61,6 +61,7 @@ define ["jquery"], ($) ->
       html.push "<option value=\"" + data[i] + "\" " + selected + ">" + data[i] + "</option>"
       i++
     target.html html.join("")
+    $(document).trigger('uiMovingFormSelectsUpdated');
     return
   state_code_from_name = (name) ->
     $("select#moving_lead_MovingTo_state").find("option").filter(->
