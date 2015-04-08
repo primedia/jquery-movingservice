@@ -7,7 +7,7 @@
     "requirejs": "*",
     "jquery": "1.8.3",
     "jquery-ui": "git@github.com:primedia/jquery-ui.git#1.8.22",
-    "jquery-maskedinput": "git@github.com:primedia/jquery-maskedinput.git"
+    "jquery-maskedinput": "git@github.com:primedia/jquery-masked-input.js.git"
   },
   "ignore": [
     ".gitignore",
