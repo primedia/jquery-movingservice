@@ -1,13 +1,13 @@
 {
   "name": "jquery-moving-service",
-  "description": "client for https://github.com/primedia/jquery-movingservice/",
+  "description": "client for https://github.com/RentPath/jquery-movingservice/",
   "main": "dist/jquery-moving-service.js",
   "version": "1.0.4",
   "dependencies": {
     "requirejs": "*",
     "jquery": "1.8.3",
-    "jquery-ui": "git@github.com:primedia/jquery-ui.git#1.8.22",
-    "jquery-maskedinput": "git@github.com:primedia/jquery-maskedinput.git"
+    "jquery-ui": "git@github.com:RentPath/jquery-ui.git#1.8.22",
+    "jquery-maskedinput": "git@github.com:RentPath/jquery-masked-input.js.git"
   },
   "ignore": [
     ".gitignore",

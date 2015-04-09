@@ -63,7 +63,7 @@
         i++;
       }
       target.html(html.join(""));
-      $(document).trigger('uiMovingFormSelectsUpdated', [target]);
+      $(document).trigger('uiMovingFormSelectsUpdated');
     };
     state_code_from_name = function(name) {
       return $("select#moving_lead_MovingTo_state").find("option").filter(function() {
