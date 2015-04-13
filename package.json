@@ -1,6 +1,6 @@
 {
   "name": "jquery-moving-service",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {},
   "devDependencies": {
     "coffee-script": "^1.9.1",
