@@ -2,7 +2,7 @@
   "name": "jquery-moving-service",
   "description": "client for https://github.com/RentPath/jquery-movingservice/",
   "main": "dist/jquery-moving-service.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "requirejs": "*",
     "jquery": "1.8.3",

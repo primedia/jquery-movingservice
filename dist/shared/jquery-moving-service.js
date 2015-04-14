@@ -36,8 +36,8 @@
               city_from_selector.change();
               city_to_selector.change();
               $("#moving_lead_MovingDate").datepicker({
-                minDate: +3,
-                maxDate: "+6M",
+                minDate: "+2w",
+                maxDate: "+6m",
                 dateFormat: "mm/dd/yy"
               });
               $("#moving_lead_DayPhone").unmask().mask("(999) 999-9999");
