@@ -70,6 +70,7 @@ define ["jquery"], ($) ->
   $.fn.movingService = (options) ->
     form_div = $(this)
     formLoad = ->
+      $(document).trigger 'uiMovingFormLoadStart'
       url = buildNewUrl(opts.form_params)
       form_div.load url, ->
         opts.update_form()
@@ -107,6 +108,7 @@ define ["jquery"], ($) ->
           return
 
         error: (req, status, err) ->
+          $(document).trigger 'uiMovingFormLoadStart'
           parent = caller.parent()
           caller.replaceWith req.responseText
           opts.update_form()
