@@ -75,6 +75,7 @@
       form_div = $(this);
       formLoad = function() {
         var url;
+        $(document).trigger('uiMovingFormLoadStart');
         url = buildNewUrl(opts.form_params);
         form_div.load(url, function() {
           opts.update_form();
@@ -117,6 +118,7 @@
           },
           error: function(req, status, err) {
             var parent;
+            $(document).trigger('uiMovingFormLoadStart');
             parent = caller.parent();
             caller.replaceWith(req.responseText);
             opts.update_form();
