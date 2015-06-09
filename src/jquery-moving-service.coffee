@@ -56,6 +56,7 @@ define [
         lead_saved: ->
           lead_form.load "/v1/moving_lead/thankyou", "", ->
             if lead_form.parent().attr("id") is "inline_leadform"
+              $(document).trigger('uiMovingFormSaved');
               $("#inline_leadform h4").hide()
               $("#form_title").hide()
 
