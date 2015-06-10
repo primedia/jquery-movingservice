@@ -56,6 +56,7 @@
           },
           lead_saved: function() {
             return lead_form.load("/v1/moving_lead/thankyou", "", function() {
+              $(document).trigger('uiMovingFormSaved');
               if (lead_form.parent().attr("id") === "inline_leadform") {
                 $("#inline_leadform h4").hide();
                 $("#form_title").hide();
