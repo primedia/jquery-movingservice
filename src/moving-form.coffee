@@ -72,6 +72,7 @@ define ["jquery"], ($) ->
     formLoad = ->
       $(document).trigger 'uiMovingFormLoadStart'
       url = buildNewUrl(opts.form_params)
+      url += defineTemplate(opts.template_param)
       form_div.load url, ->
         opts.update_form()
         $(".moving_form", form_div).submit submitLead
@@ -94,6 +95,9 @@ define ["jquery"], ($) ->
       uri = uri.substring(0, uri.length - 1)
       base += encodeURI(uri)
       base
+
+    defineTemplate = (params) ->
+      return if params.template? then "&template=#{params.template}" else ""
 
     submitLead = ->
       caller = $(this)

@@ -53,6 +53,9 @@ define [
           Sid: options.SID
           LeadSource: options.LeadSource
 
+        template_param:
+          template: $(this).attr("data-template")
+
         lead_saved: ->
           lead_form.load "/v1/moving_lead/thankyou", "", ->
             $(document).trigger('uiMovingFormSaved')

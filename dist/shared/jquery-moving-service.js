@@ -54,6 +54,9 @@
             Sid: options.SID,
             LeadSource: options.LeadSource
           },
+          template_param: {
+            template: $(this).attr("data-template")
+          },
           lead_saved: function() {
             return lead_form.load("/v1/moving_lead/thankyou", "", function() {
               $(document).trigger('uiMovingFormSaved');
