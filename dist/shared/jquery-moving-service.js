@@ -51,9 +51,11 @@
             MovingTo_state: $(this).attr("data-state"),
             MovingTo_city: $(this).attr("data-city"),
             MovingTo_zip: $(this).attr("data-zip"),
-            template: $(this).attr("data-template"),
             Sid: options.SID,
             LeadSource: options.LeadSource
+          },
+          template_param: {
+            template: $(this).attr("data-template")
           },
           lead_saved: function() {
             return lead_form.load("/v1/moving_lead/thankyou", "", function() {

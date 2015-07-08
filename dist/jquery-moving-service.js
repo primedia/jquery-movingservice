@@ -71,12 +71,13 @@
       }).attr("value");
     };
     $.fn.movingService = function(options) {
-      var buildNewUrl, defaults, formLoad, form_div, opts, submitLead, thankYou, updateForm;
+      var buildNewUrl, defaults, defineTemplate, formLoad, form_div, opts, submitLead, thankYou, updateForm;
       form_div = $(this);
       formLoad = function() {
         var url;
         $(document).trigger('uiMovingFormLoadStart');
         url = buildNewUrl(opts.form_params);
+        url += defineTemplate(opts.template_param);
         form_div.load(url, function() {
           opts.update_form();
           $(".moving_form", form_div).submit(submitLead);
@@ -101,6 +102,13 @@
         uri = uri.substring(0, uri.length - 1);
         base += encodeURI(uri);
         return base;
+      };
+      defineTemplate = function(params) {
+        if (params.template != null) {
+          return "&template=" + params.template;
+        } else {
+          return "";
+        }
       };
       submitLead = function() {
         var caller;
@@ -204,9 +212,11 @@
             MovingTo_state: $(this).attr("data-state"),
             MovingTo_city: $(this).attr("data-city"),
             MovingTo_zip: $(this).attr("data-zip"),
-            template: $(this).attr("data-template"),
             Sid: options.SID,
             LeadSource: options.LeadSource
+          },
+          template_param: {
+            template: $(this).attr("data-template")
           },
           lead_saved: function() {
             return lead_form.load("/v1/moving_lead/thankyou", "", function() {
