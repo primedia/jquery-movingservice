@@ -1,5 +1,5 @@
 # jquery-moving-service
-client pkg for https://github.com/primedia/service_moving_form/
+client pkg for https://github.com/rentpath/service_moving_form/
 
 # Install
 

@@ -37,10 +37,11 @@ define [
             $("#moving_lead_MovingDate").datepicker
               minDate: "+2w"
               maxDate: "+6m"
-              dateFormat: "mm/dd/yy"
+              dateFormat: "mm-dd-yy"
 
             $("#moving_lead_DayPhone").unmask().mask "(999) 999-9999"
             $("#moving_lead_EvePhone").unmask().mask "(999) 999-9999"
+
           $(".form_button_box input").val "Get Moving Quotes!"
           $(".form_button_box input").addClass "button"
           $(document).trigger 'uiMovingFormUpdated'
