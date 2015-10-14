@@ -1,7 +1,7 @@
 (function() {
   define(["jquery", "jquery-ui", "moving-form", "jquery-maskedinput"], function($, ui, movingForm, mask) {
     return $.fn.getLeadForm = function(input_button, options) {
-      var err, lead_form, moving_service_error;
+      var err, error, lead_form, moving_service_error;
       if (options == null) {
         options = {};
       }
@@ -38,7 +38,7 @@
               $("#moving_lead_MovingDate").datepicker({
                 minDate: "+2w",
                 maxDate: "+6m",
-                dateFormat: "mm/dd/yy"
+                dateFormat: "mm-dd-yy"
               });
               $("#moving_lead_DayPhone").unmask().mask("(999) 999-9999");
               $("#moving_lead_EvePhone").unmask().mask("(999) 999-9999");
@@ -76,8 +76,8 @@
             alert(res);
           }
         });
-      } catch (_error) {
-        err = _error;
+      } catch (error) {
+        err = error;
         alert(err);
         return moving_service_error = function() {
           return $("#ready_to_move .moving_form").hide();
