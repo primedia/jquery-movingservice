@@ -16,8 +16,8 @@ the default task:
   - watches coffee
   - builds your final rjs package to `dist/jquery-moving-service`
 
-# Tests
+# tests
 
 ```
-bundle exec rake jasmine
+npm test
 ```
