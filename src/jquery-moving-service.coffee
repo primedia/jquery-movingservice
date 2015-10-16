@@ -30,10 +30,10 @@ define [
               ).attr selected: true
             movingForm.load_cities_and_zips city, state, $("#moving_to_row")  unless city_to_selector.val()
           else
-            state_from_selector.change()
-            state_to_selector.change()
-            city_from_selector.change()
-            city_to_selector.change()
+            state_from_selector.trigger('uiChange');
+            state_to_selector.trigger('uiChange');
+            city_from_selector.trigger('uiChange');
+            city_to_selector.trigger('uiChange');
             $("#moving_lead_MovingDate").datepicker
               minDate: "+2w"
               maxDate: "+6m"
