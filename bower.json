@@ -1,6 +1,6 @@
 {
   "name": "jquery-moving-service",
-  "description": "client for https://github.com/RentPath/jquery-movingservice/",
+  "description": "client for https://github.com/RentPath/service_moving_form/",
   "main": "dist/jquery-moving-service.js",
   "version": "2.0.0",
   "dependencies": {
