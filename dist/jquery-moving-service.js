@@ -2,18 +2,18 @@
   define('moving-form',["jquery"], function($) {
     var load_cities, load_cities_and_zips, load_zips, parse_and_inject_results, setup_bindings, state_code_from_name;
     setup_bindings = function() {
-      $("select#moving_lead_MovingFrom_state").bind("change", function() {
+      $("select#moving_lead_MovingFrom_state").bind("change uiChange", function() {
         load_cities($("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_city"));
-      }).trigger("change");
-      $("select#moving_lead_MovingTo_state").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingTo_state").bind("change uiChange", function() {
         load_cities($("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_city"));
-      }).trigger("change");
-      $("select#moving_lead_MovingTo_city").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingTo_city").bind("change uiChange", function() {
         load_zips($("select#moving_lead_MovingTo_city").val(), $("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_zip"));
-      }).trigger("change");
-      $("select#moving_lead_MovingFrom_city").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingFrom_city").bind("change uiChange", function() {
         load_zips($("select#moving_lead_MovingFrom_city").val(), $("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_zip"));
-      }).trigger("change");
+      }).trigger("uiChange");
     };
     load_cities = function(state, target, callback) {
       var current_city;
@@ -192,10 +192,10 @@
                 movingForm.load_cities_and_zips(city, state, $("#moving_to_row"));
               }
             } else {
-              state_from_selector.change();
-              state_to_selector.change();
-              city_from_selector.change();
-              city_to_selector.change();
+              state_from_selector.trigger('uiChange');
+              state_to_selector.trigger('uiChange');
+              city_from_selector.trigger('uiChange');
+              city_to_selector.trigger('uiChange');
               $("#moving_lead_MovingDate").datepicker({
                 minDate: "+2w",
                 maxDate: "+6m",

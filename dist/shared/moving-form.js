@@ -2,18 +2,18 @@
   define(["jquery"], function($) {
     var load_cities, load_cities_and_zips, load_zips, parse_and_inject_results, setup_bindings, state_code_from_name;
     setup_bindings = function() {
-      $("select#moving_lead_MovingFrom_state").bind("change", function() {
+      $("select#moving_lead_MovingFrom_state").bind("change uiChange", function() {
         load_cities($("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_city"));
-      }).trigger("change");
-      $("select#moving_lead_MovingTo_state").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingTo_state").bind("change uiChange", function() {
         load_cities($("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_city"));
-      }).trigger("change");
-      $("select#moving_lead_MovingTo_city").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingTo_city").bind("change uiChange", function() {
         load_zips($("select#moving_lead_MovingTo_city").val(), $("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_zip"));
-      }).trigger("change");
-      $("select#moving_lead_MovingFrom_city").bind("change", function() {
+      }).trigger("uiChange");
+      $("select#moving_lead_MovingFrom_city").bind("change uiChange", function() {
         load_zips($("select#moving_lead_MovingFrom_city").val(), $("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_zip"));
-      }).trigger("change");
+      }).trigger("uiChange");
     };
     load_cities = function(state, target, callback) {
       var current_city;

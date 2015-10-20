@@ -1,21 +1,21 @@
 define ["jquery"], ($) ->
   setup_bindings = ->
-    $("select#moving_lead_MovingFrom_state").bind("change", ->
+    $("select#moving_lead_MovingFrom_state").bind("change uiChange", ->
       load_cities $("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_city")
       return
-    ).trigger "change"
-    $("select#moving_lead_MovingTo_state").bind("change", ->
+    ).trigger "uiChange"
+    $("select#moving_lead_MovingTo_state").bind("change uiChange", ->
       load_cities $("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_city")
       return
-    ).trigger "change"
-    $("select#moving_lead_MovingTo_city").bind("change", ->
+    ).trigger "uiChange"
+    $("select#moving_lead_MovingTo_city").bind("change uiChange", ->
       load_zips $("select#moving_lead_MovingTo_city").val(), $("select#moving_lead_MovingTo_state").val(), $("select#moving_lead_MovingTo_zip")
       return
-    ).trigger "change"
-    $("select#moving_lead_MovingFrom_city").bind("change", ->
+    ).trigger "uiChange"
+    $("select#moving_lead_MovingFrom_city").bind("change uiChange", ->
       load_zips $("select#moving_lead_MovingFrom_city").val(), $("select#moving_lead_MovingFrom_state").val(), $("select#moving_lead_MovingFrom_zip")
       return
-    ).trigger "change"
+    ).trigger "uiChange"
     return
   load_cities = (state, target, callback) ->
     if state
