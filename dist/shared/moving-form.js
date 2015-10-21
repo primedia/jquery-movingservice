@@ -122,6 +122,7 @@
           type: "POST",
           data: $(this).serialize(),
           success: function(response) {
+            $(document).trigger('uiMovingFormSubmitted');
             opts.lead_saved();
           },
           error: function(req, status, err) {
