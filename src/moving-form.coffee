@@ -108,6 +108,7 @@ define ["jquery"], ($) ->
         type: "POST"
         data: $(this).serialize()
         success: (response) ->
+          $(document).trigger('uiMovingFormSubmitted')
           opts.lead_saved()
           return
 
