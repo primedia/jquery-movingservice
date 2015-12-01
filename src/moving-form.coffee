@@ -142,4 +142,3 @@ define ["jquery"], ($) ->
   load_cities_and_zips: load_cities_and_zips
   load_cities: load_cities
   load_zips: load_zips
-

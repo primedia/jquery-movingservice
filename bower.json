@@ -4,10 +4,12 @@
   "main": "dist/jquery-moving-service.js",
   "version": "2.0.1",
   "dependencies": {
-    "requirejs": "*",
     "jquery": "1.8.3",
-    "jquery-ui": "git@github.com:RentPath/jquery-ui.git#1.8.22",
-    "jquery-maskedinput": "git@github.com:RentPath/jquery-masked-input.js.git"
+    "jquery-maskedinput": "git@github.com:RentPath/jquery-masked-input.js.git",
+    "pikaday": "1.4.0"
+  },
+  "devDependencies": {
+    "requirejs": "*"
   },
   "ignore": [
     ".gitignore",
