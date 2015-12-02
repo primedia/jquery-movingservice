@@ -1,5 +1,5 @@
 (function() {
-  define(["jquery", "jquery-ui", "moving-form", "jquery-maskedinput"], function($, ui, movingForm, mask) {
+  define(["jquery", "moving-form", "jquery-maskedinput", "pikaday"], function($, movingForm, mask, Pikaday) {
     return $.fn.getLeadForm = function(input_button, options) {
       var err, error, lead_form, moving_service_error;
       if (options == null) {
@@ -9,7 +9,7 @@
         lead_form = $(this);
         return $(this).movingService({
           update_form: function() {
-            var city, city_from_selector, city_to_selector, referrer, segments, state, state_from_selector, state_to_selector;
+            var city, city_from_selector, city_to_selector, referrer, segments, state, state_from_selector, state_to_selector, today;
             lead_form.removeClass("loading");
             state_from_selector = $("select#moving_lead_MovingFrom_state");
             city_from_selector = $("select#moving_lead_MovingFrom_city");
@@ -35,10 +35,12 @@
               state_to_selector.trigger('uiChange');
               city_from_selector.trigger('uiChange');
               city_to_selector.trigger('uiChange');
-              $("#moving_lead_MovingDate").datepicker({
-                minDate: "+2w",
-                maxDate: "+6m",
-                dateFormat: "mm-dd-yy"
+              today = new Date;
+              new Pikaday({
+                field: $('#moving_lead_MovingDate')[0],
+                format: 'MM-DD-YYYY',
+                minDate: new Date(+(new Date) + 12096e5),
+                maxDate: new Date(new Date(today).setMonth(today.getMonth() + 6))
               });
               $("#moving_lead_DayPhone").unmask().mask("(999) 999-9999");
               $("#moving_lead_EvePhone").unmask().mask("(999) 999-9999");

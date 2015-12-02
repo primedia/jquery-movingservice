@@ -1,9 +1,14 @@
 define [
   "jquery",
-  "jquery-ui",
   "moving-form",
   "jquery-maskedinput"
-], ($, ui, movingForm, mask) ->
+  "pikaday"
+], (
+  $
+  movingForm
+  mask
+  Pikaday
+) ->
   # sid may be undefined or null (will default to AG's SID value server-side)
   $.fn.getLeadForm = (input_button, options={}) -> #TODO: I SHOULD NOT BE A PLUGIN -BNS
     try
@@ -34,10 +39,13 @@ define [
             state_to_selector.trigger('uiChange');
             city_from_selector.trigger('uiChange');
             city_to_selector.trigger('uiChange');
-            $("#moving_lead_MovingDate").datepicker
-              minDate: "+2w"
-              maxDate: "+6m"
-              dateFormat: "mm-dd-yy"
+
+            today = new Date
+            new Pikaday
+              field: $('#moving_lead_MovingDate')[0]
+              format: 'MM-DD-YYYY'
+              minDate: new Date(+new Date + 12096e5) # two weeks
+              maxDate: new Date(new Date(today).setMonth(today.getMonth()+6)) # 6 months from now
 
             $("#moving_lead_DayPhone").unmask().mask "(999) 999-9999"
             $("#moving_lead_EvePhone").unmask().mask "(999) 999-9999"
