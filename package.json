@@ -1,11 +1,15 @@
 {
   "name": "jquery-moving-service",
   "version": "3.0.0",
-  "dependencies": {},
+  "main": "jquery-moving-service.js",
+  "dependencies": {
+    "jquery": "git+ssh://git@github.com/jquery/jquery.git#1.8.3",
+    "jquery-maskedinput": "git+ssh://git@github.com/RentPath/jquery-masked-input.js.git",
+    "pikaday": "^1.4.0"
+  },
   "devDependencies": {
     "coffee-script": "^1.9.1",
     "grunt": "^0.4.5",
-    "grunt-bower-requirejs": "^1.1.0",
     "gulp": "^3.8.7",
     "gulp-coffee": "^2.1.1",
     "gulp-release-tasks": "0.0.3",
@@ -16,7 +20,7 @@
     "requirejs": "^2.1.14"
   },
   "scripts": {
-    "start": "bundle; npm install; bower install; grunt bower; ./node_modules/gulp/bin/gulp.js;",
+    "start": "bundle; npm install; ./node_modules/gulp/bin/gulp.js;",
     "test": "bundle exec rake jasmine;"
   }
 }

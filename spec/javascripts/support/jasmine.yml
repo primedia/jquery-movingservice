@@ -11,9 +11,8 @@
 #   - dist/**/*.js
 #
 src_files:
-  - vendor/bower/requirejs/require.js
-  # - spec/javascripts/support/require.spec.config.js
-  - dist/require.config.js
+  - node_modules/requirejs/require.js
+  - require.config.js
 
 # stylesheets
 #
@@ -87,7 +86,7 @@ spec_dir:
 #
 # spec_helper: spec/javascripts/support/jasmine_helper.rb
 #
-spec_helper: spec/javascripts/support/jasmine_helper.rb
+spec_helper:
 
 # boot_dir
 #
