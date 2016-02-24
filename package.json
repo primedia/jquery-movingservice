@@ -5,7 +5,7 @@
   "dependencies": {
     "jquery": "git+ssh://git@github.com/jquery/jquery.git#1.8.3",
     "jquery-maskedinput": "git+ssh://git@github.com/RentPath/jquery-masked-input.js.git",
-    "pikaday": "^1.4.0"
+    "pikaday": "1.4.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.1",
