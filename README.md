@@ -9,7 +9,6 @@ client package for https://github.com/RentPath/service_moving_form/
 
 ```
 npm install
-bower install
 bundle install
 gulp
 ````

@@ -1,11 +1,8 @@
 gulp    = require 'gulp'
 
 coffee  = require 'gulp-coffee'
-uglify  = require 'gulp-uglify'
 gutil   = require 'gulp-util'
-rename  = require 'gulp-rename'
 watch   = require 'gulp-watch'
-p       = require './package.json'
 exec    = require('child_process').exec
 
 js_in        = './src/**/*.js'
