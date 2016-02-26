@@ -1,7 +1,13 @@
 {
   "name": "jquery-moving-service",
   "version": "3.0.0",
+  "main": "jquery-moving-service.js",
   "dependencies": {},
+  "peerDependencies": {
+    "jquery": "^1.8.3",
+    "jquery-maskedinput": "^0.0.2",
+    "pikaday": "^1.4.0"
+  },
   "devDependencies": {
     "coffee-script": "^1.9.1",
     "grunt": "^0.4.5",
