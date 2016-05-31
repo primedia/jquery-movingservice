@@ -9,8 +9,11 @@
         lead_form = $(this);
         return $(this).movingService({
           update_form: function() {
-            var city, city_from_selector, city_to_selector, referrer, segments, state, state_from_selector, state_to_selector, today;
+            var city, city_from_selector, city_to_selector, referrer, segments, state, state_from_selector, state_to_selector;
             lead_form.removeClass("loading");
+            this.setup_date_picker();
+            $("#moving_lead_DayPhone").unmask().mask("(999) 999-9999");
+            $("#moving_lead_EvePhone").unmask().mask("(999) 999-9999");
             state_from_selector = $("select#moving_lead_MovingFrom_state");
             city_from_selector = $("select#moving_lead_MovingFrom_city");
             state_to_selector = $("select#moving_lead_MovingTo_state");
@@ -35,19 +38,20 @@
               state_to_selector.trigger('uiChange');
               city_from_selector.trigger('uiChange');
               city_to_selector.trigger('uiChange');
-              today = new Date;
-              new Pikaday({
-                field: $('#moving_lead_MovingDate')[0],
-                format: 'MM-DD-YYYY',
-                minDate: new Date(+(new Date) + 12096e5),
-                maxDate: new Date(new Date(today).setMonth(today.getMonth() + 6))
-              });
-              $("#moving_lead_DayPhone").unmask().mask("(999) 999-9999");
-              $("#moving_lead_EvePhone").unmask().mask("(999) 999-9999");
             }
             $(".form_button_box input").val("Get Moving Quotes!");
             $(".form_button_box input").addClass("button");
             $(document).trigger('uiMovingFormUpdated');
+          },
+          setup_date_picker: function() {
+            var today;
+            today = new Date;
+            return new Pikaday({
+              field: $('#moving_lead_MovingDate')[0],
+              format: 'MM-DD-YYYY',
+              minDate: new Date(+(new Date) + 12096e5),
+              maxDate: new Date(new Date(today).setMonth(today.getMonth() + 6))
+            });
           },
           form_params: {
             MovingTo_state: $(this).attr("data-state"),
