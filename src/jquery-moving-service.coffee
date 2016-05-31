@@ -16,6 +16,12 @@ define [
       $(this).movingService
         update_form: ->
           lead_form.removeClass "loading"
+
+          this.setup_date_picker()
+
+          $("#moving_lead_DayPhone").unmask().mask "(999) 999-9999"
+          $("#moving_lead_EvePhone").unmask().mask "(999) 999-9999"
+
           state_from_selector = $("select#moving_lead_MovingFrom_state")
           city_from_selector = $("select#moving_lead_MovingFrom_city")
           state_to_selector = $("select#moving_lead_MovingTo_state")
@@ -40,20 +46,18 @@ define [
             city_from_selector.trigger('uiChange');
             city_to_selector.trigger('uiChange');
 
-            today = new Date
-            new Pikaday
-              field: $('#moving_lead_MovingDate')[0]
-              format: 'MM-DD-YYYY'
-              minDate: new Date(+new Date + 12096e5) # two weeks
-              maxDate: new Date(new Date(today).setMonth(today.getMonth()+6)) # 6 months from now
-
-            $("#moving_lead_DayPhone").unmask().mask "(999) 999-9999"
-            $("#moving_lead_EvePhone").unmask().mask "(999) 999-9999"
-
           $(".form_button_box input").val "Get Moving Quotes!"
           $(".form_button_box input").addClass "button"
           $(document).trigger 'uiMovingFormUpdated'
           return
+
+        setup_date_picker: ->
+          today = new Date
+          new Pikaday
+            field: $('#moving_lead_MovingDate')[0]
+            format: 'MM-DD-YYYY'
+            minDate: new Date(+new Date + 12096e5) # two weeks
+            maxDate: new Date(new Date(today).setMonth(today.getMonth()+6)) # 6 months from now
 
         form_params:
           MovingTo_state: $(this).attr("data-state")
